@@ -1,15 +1,31 @@
 <?php
-
+/**
+ * User
+ *
+ * @subpackage User
+ * @author     Michel Zuidema <michelgzuidema@gmail.com>
+ */
 class userAction extends User {
+    /**
+     *
+     * Shows all users
+     *
+     * @return string array
+     */
     public function ShowAllUsers() {
         $datas = $this->GetAllUsers();
 
-        foreach ($datas as $data) {
-            echo $data['naam'] . "<br>";
-            echo $data['level'] . "<br>";
-        }
+        return $datas;
     }
 
+    /**
+     *
+     * Logs user in
+     *
+     * @param string $username login username
+     * @param string $password login password
+     * @return boolean
+     */
     public function LoginUser($username, $password) {
         $userData = $this->LoginUserDetails($username);
 

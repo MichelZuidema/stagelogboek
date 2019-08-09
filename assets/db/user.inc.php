@@ -1,6 +1,17 @@
 <?php
-
+/**
+ * User
+ *
+ * @subpackage Database
+ * @author     Michel Zuidema <michelgzuidema@gmail.com>
+ */
 class User extends Database {
+    /**
+     *
+     * Gets all data from all the users
+     *
+     * @return string array
+     */
     protected function GetAllUsers() {
         $sql = "SELECT * FROM `users`";
         $result = $this->connect()->query($sql);
@@ -17,6 +28,13 @@ class User extends Database {
         }
     }
 
+    /**
+     *
+     * Gets details of log in user
+     *
+     * @param string $username login username
+     * @return string array
+     */
     protected function LoginUserDetails($username) {
         $sql = "SELECT * FROM `users` WHERE naam = '$username'";
         $result = $this->connect()->query($sql);
