@@ -14,9 +14,9 @@ class userAction extends User {
         $userData = $this->LoginUserDetails($username);
 
         if(password_verify($password, $userData[0]['password'])) {
-            echo "Password verified";
+            return true;
         } else {
-            echo "Incorrect Password";
+            return false;
         }
     }
 }
