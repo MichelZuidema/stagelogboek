@@ -1,4 +1,6 @@
 <?php
+// The following line is needed because the login process goes through AJAX / jQuery
+session_start();
 /**
  * User
  *
@@ -30,6 +32,10 @@ class userAction extends User {
         $userData = $this->LoginUserDetails($username);
 
         if(password_verify($password, $userData[0]['password'])) {
+            $_SESSION['userid'] = $userData[0]['id'];
+            $_SESSION['username'] = $userData[0]['naam'];
+            $_SESSION['userlevel'] = $userData[0]['level'];
+
             return true;
         } else {
             return false;

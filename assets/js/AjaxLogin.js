@@ -9,7 +9,7 @@ function Login(username, password) {
     })
         .done(function(data) {
             if(data == "OK") {
-                window.open("https://google.com");
+                location.reload();
             } else {
                 alert(data);
             }
