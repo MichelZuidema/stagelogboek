@@ -1,0 +1,76 @@
+/* Blog Styles */
+#post-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.post {
+    margin-right: 10px;
+    width: 26.7vw;
+}
+
+.post h2 {
+    border-bottom: 1.5px solid black;
+}
+
+.post .p_time_author {
+    margin-top: -10px;
+    color: lightgray;
+    font-size: 11px;
+}
+
+input[type=text], textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#required_lvl {
+    width: 100%;
+}
+
+textarea {
+    height: 20vh;
+}
+
+#create_form_submit {
+    width: 30%;
+    background-color: #e8491d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#create_form_submit:hover {
+    background-color: #E80005;
+}
+
+.create-form {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.warning {
+    border: 2px solid orange;
+    background-color: red;
+}
+
+/* Media Queries */
+@media (min-width: 1440px) {
+    #post-grid {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width: 890px) {
+    #post-grid {
+        grid-template-columns: auto;
+    }
+}

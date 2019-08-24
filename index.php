@@ -1,6 +1,10 @@
 <?php
     session_start();
     $selectedLink = "home";
+
+    if(isset($_SESSION['username'])) {
+        header("Location: blog/");
+    }
 ?>
 <html>
     <head>

@@ -9,7 +9,7 @@ function Login(username, password) {
     })
         .done(function(data) {
             if(data == "OK") {
-                window.location.href = 'index.php';
+                window.location.href = 'blog/';
             } else {
                 alert(data);
             }

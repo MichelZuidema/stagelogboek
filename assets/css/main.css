@@ -83,6 +83,23 @@ header a:hover{
     font-size:20px;
 }
 
+/* Login Styles */
+.input {
+    margin-top: 10px;
+    padding: 12px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+}
+
+.form-btn {
+    margin-top: 10px;
+    width: 30%;
+    float: left;
+    padding: 12px;
+}
+
 /* Media Queries */
 @media(max-width: 768px) {
     header #branding,

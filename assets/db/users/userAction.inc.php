@@ -1,20 +1,23 @@
 <?php
 // The following line is needed because the login process goes through AJAX / jQuery
 session_start();
+
 /**
  * User
  *
  * @subpackage User
  * @author     Michel Zuidema <michelgzuidema@gmail.com>
  */
-class userAction extends User {
+class userAction extends User
+{
     /**
      *
      * Shows all users
      *
      * @return string array
      */
-    public function ShowAllUsers() {
+    public function ShowAllUsers()
+    {
         $datas = $this->GetAllUsers();
 
         return $datas;
@@ -28,10 +31,11 @@ class userAction extends User {
      * @param string $password login password
      * @return boolean
      */
-    public function LoginUser($username, $password) {
+    public function LoginUser($username, $password)
+    {
         $userData = $this->LoginUserDetails($username);
 
-        if(password_verify($password, $userData[0]['password'])) {
+        if (password_verify($password, $userData[0]['password'])) {
             $_SESSION['userid'] = $userData[0]['id'];
             $_SESSION['username'] = $userData[0]['naam'];
             $_SESSION['userlevel'] = $userData[0]['level'];
@@ -40,6 +44,19 @@ class userAction extends User {
         } else {
             return false;
         }
+    }
+
+    /**
+     * Gets details from a user with a specific id
+     *
+     * @param int $id user id
+     * @return string array
+     */
+    public function ShowUserDetails($id)
+    {
+        $datas = $this->GetUserDetails($id);
+
+        return $datas;
     }
 }
 

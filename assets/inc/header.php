@@ -5,10 +5,18 @@
         </div>
         <nav
             <ul>
-                <li class="<?php if($selectedLink == "home"){ echo "current";} ?>"><a href="index.php">Thuis</a></li>
+                <li class="<?php if($selectedLink == "home" OR $selectedLink == "blog/home"){ echo "current";} ?>"><a href="index.php">Thuis</a></li>
                 <?php
                     if(isset($_SESSION['username'])) {
-                        echo '<li><a href="logout.php">Logout</a></li>';
+                        if($_SESSION['userlevel'] == 3) {
+                            echo '<li><a href="createpost.php">Create Post</a></li>';
+                        }
+
+                        if($selectedLink == "blog/home") {
+                            echo '<li><a href="../logout.php">Logout</a></li>';
+                        } else {
+                            echo '<li><a href="logout.php">Logout</a></li>';
+                        }
                     } else {
                         echo '<li class="' . ($selectedLink == "login" ? 'current' : '') . '"><a href="login.php">Login / Registreer</a></li>';
                     }

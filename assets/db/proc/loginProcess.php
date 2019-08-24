@@ -1,7 +1,7 @@
 <?php
 require_once '../database.class.php';
-require_once '../user.inc.php';
-require_once '../userAction.inc.php';
+require_once '../users/user.inc.php';
+require_once '../users/userAction.inc.php';
 
 $user = new userAction();
 
