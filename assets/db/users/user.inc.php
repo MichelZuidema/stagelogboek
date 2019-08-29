@@ -66,9 +66,26 @@ class User extends Database
         $result = $this->connect()->query($sql);
         $rows = $result->num_rows;
 
-        if($rows > 0) {
+        if ($rows > 0) {
             $row = $result->fetch_assoc();
             $data[] = $row;
+
+            return $data;
+        } else {
+            echo "No results found!";
+        }
+    }
+
+    protected function GetPostsWithId($id)
+    {
+        $sql = "SELECT * FROM posts WHERE author_id = $id";
+        $result = $this->connect()->query($sql);
+        $rows = $result->num_rows;
+
+        if($rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
 
             return $data;
         } else {

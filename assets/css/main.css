@@ -20,6 +20,10 @@ ul {
     padding: 0;
 }
 
+.light-gray {
+    color: lightgray;
+}
+
 /* Header Styles */
 header{
     background:#ffffff;

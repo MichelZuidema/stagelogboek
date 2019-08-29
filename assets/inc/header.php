@@ -8,11 +8,17 @@
                 <li class="<?php if($selectedLink == "home" OR $selectedLink == "blog/home"){ echo "current";} ?>"><a href="index.php">Thuis</a></li>
                 <?php
                     if(isset($_SESSION['username'])) {
-                        if($_SESSION['userlevel'] == 3) {
-                            echo '<li><a href="createpost.php">Create Post</a></li>';
+                        if($_SESSION['userlevel'] == 2) {
+                            if($selectedLink == "blog/create") {
+                                echo '<li class="current"><a href="createpost.php">Create Post</a></li>';
+                            } else {
+                                echo '<li><a href="createpost.php">Create Post</a></li>';
+                            }
                         }
 
                         if($selectedLink == "blog/home") {
+                            echo '<li><a href="../logout.php">Logout</a></li>';
+                        } else if($selectedLink == "blog/profile") {
                             echo '<li><a href="../logout.php">Logout</a></li>';
                         } else {
                             echo '<li><a href="logout.php">Logout</a></li>';

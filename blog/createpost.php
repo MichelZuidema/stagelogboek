@@ -1,6 +1,6 @@
 <?php
 session_start();
-$selectedLink = "blog/home";
+$selectedLink = "blog/create";
 
 if(!isset($_SESSION['username'])) {
     header("Location: ../login.php");

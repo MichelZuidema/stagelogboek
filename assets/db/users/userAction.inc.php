@@ -58,6 +58,18 @@ class userAction extends User
 
         return $datas;
     }
+
+    /**
+     * Shows all posts from a user with a specific id
+     * @param int $id user id
+     * @return string array
+     */
+    public function ShowPostsOfUser($id)
+    {
+        $datas = $this->GetPostsWithId($id);
+
+        return $datas;
+    }
 }
 
 ?>
