@@ -67,6 +67,19 @@ textarea {
     font-size: 10px;
 }
 
+.post_comments {
+    margin-top: 5vh;
+}
+
+.post_comments h2 {
+    border-bottom: 1px solid black;
+}
+
+.post_comments .comment {
+    margin-top: 1vh;
+    border-bottom: 1px solid gray;
+}
+
 /* Media Queries */
 @media (min-width: 1440px) {
     #post-grid {

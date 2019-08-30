@@ -14,6 +14,7 @@ if(isset($_SESSION['username'])) {
     foreach ($posts as $id => $post) {
         $author_name = $userAction->ShowUserDetails($post['author_id'])[0]['naam'];
         $author_id = numhash($userAction->ShowUserDetails($post['author_id'])[0]['id']);
+        $post_id = numhash($post['id']);
 
         if($_SESSION['userlevel'] >= $post['required_lvl']) {
             echo "<section class='post'>";
@@ -32,6 +33,7 @@ if(isset($_SESSION['username'])) {
             }
 
             echo "<p class='content'>" . $post['post_content'] . "</p>";
+            echo "<p><a href='post.php?id=" . $post_id . "'>Read more</a></p>";
             echo "</section>";
         }
     }
