@@ -29,7 +29,7 @@
 
         <main>
             <div class="container">
-                <input type="text" name="inputUsername" id="inputUsername" value="Michel" class="input">
+                <input type="text" name="inputUsername" id="inputUsername" value="mzuidema" class="input">
                 <input type="password" name="inputPassword" id="inputPassword" value="geheim" class="input">
                 <input type="submit" value="Submit" name="submit" id="btnSubmit" class="form-btn input">
             </div>
