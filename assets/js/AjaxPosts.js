@@ -18,7 +18,7 @@ function CreateBlog() {
     var current_date = $('#current_date').val();
 
     $.ajax({
-        url: '../assets/db/proc/createPost.php',
+        url: '../assets/db/proc/creacrtePost.php',
         method: 'POST',
         data: {
             'author_id': author_id,

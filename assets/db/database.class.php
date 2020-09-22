@@ -15,7 +15,7 @@ class Database {
      *
      * Connects to the database
      *
-     * @return connection
+     * @return mysqli
      */
     protected function connect() {
         $this->host = "localhost";

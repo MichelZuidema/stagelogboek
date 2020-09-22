@@ -59,13 +59,13 @@ class Post extends Database
      * @param int $author_id
      * @param string $post_title
      * @param string $post_content
-     * @param date $created_date
-     * @param int $required_lvl
+     * @param int $required_lvl_id
      * @return bool
      */
-    protected function CreatePost($author_id, $post_title, $post_content, $created_date, $required_lvl)
+    protected function CreatePost($author_id, $post_title, $post_content, $required_lvl_id)
     {
-        $sql = "INSERT INTO `posts` (id, author_id, post_title, post_content, created_date, last_updated, required_lvl) VALUES (NULL, '$author_id', '$post_title', '$post_content', '$created_date', NULL, '$required_lvl')";
+        // $sql = "INSERT INTO `posts` (id, author_id, post_title, post_content, created_date, last_updated, required_lvl) VALUES (NULL, '$author_id', '$post_title', '$post_content', '$created_date', NULL, '$required_lvl')";
+        $sql = "INSERT INTO `post` (id, author_id, post_title, post_content, required_level_id, created_at, updated_at) VALUES (NULL, $author_id, '$post_title', '$post_content', $required_lvl_id, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP())";
 
         if ($this->connect()->query($sql)) {
             return true;
