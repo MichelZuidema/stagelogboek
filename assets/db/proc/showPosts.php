@@ -1,7 +1,7 @@
 <?php
 require_once '../database.class.php';
-require_once '../posts/post.inc.php';
-require_once '../posts/postAction.inc.php';
+require_once '../post/post.inc.php';
+require_once '../post/postAction.inc.php';
 require_once '../users/user.inc.php';
 require_once '../users/userAction.inc.php';
 require_once '../functions.php';
